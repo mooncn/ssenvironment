@@ -340,23 +340,23 @@ install_panel_and_node(){
 	reboot now
 }
 install_speeder(){
-    echo "#############################################################"
-    echo "#      Speed up One click Install                           #"
-	echo "# 1  锐速script one click install                           #"
+        echo "#############################################################"
+        echo "#      Speed up One click Install                           #"
+	echo "# 1  锐速script one click install                            #"
 	echo "# 2  BBR script One click Install                           #"
 	echo "#############################################################"
-	if ( $speedup = "1"){
+        echo -e "please type number [1-2]"
+        read speedup
+	if [ $speedup -eq 1 ];then
 	 echo "正在获取锐速脚本中。。。"
-     wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh
-     bash serverspeeder.sh
+         wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh
+         bash serverspeeder.sh
 	 rm -rf serverspeeder.sh
-       }
-	  else {
+	 else
 	  echo "正在获取bbr脚本中。。。"
 	   wget -N --no-check-certificate https://raw.githubusercontent.com/mooncn/ssenvironment/master/bbr.sh
 	   bash bbr.sh
 	   rm -rf bbr.sh
-	  }
 	  fi
 }
 echo
